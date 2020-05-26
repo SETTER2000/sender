@@ -74,7 +74,7 @@
         </v-app-bar>
 
         <v-content>
-            <v-container
+       <!--     <v-container
                     class="fill-height"
                     fluid
             >
@@ -99,7 +99,8 @@
                         </v-tooltip>
                     </v-col>
                 </v-row>
-            </v-container>
+            </v-container>-->
+            <router-view></router-view>
         </v-content>
 
         <v-footer app>
@@ -121,7 +122,10 @@
                 {title: 'Add', url: '/add', icon: 'mdi-playlist-plus', color: 'grey darken-2'},
                 {title: 'Edit', url: '/edit', icon: 'mdi-playlist-edit', color: 'grey darken-2'},
                 {title: 'List', url: '/list', icon: 'mdi-playlist-play', color: 'grey darken-2'},
-                {title: 'Exit', url: '/exit', icon: 'mdi-export', color: 'grey darken-2'}
+                {title: 'About', url: '/about', icon: 'mdi-playlist', color: 'grey darken-2'},
+
+                {title: 'Exit', url: '/exit', icon: 'mdi-export', color: 'grey darken-2'},
+
             ],
         }),
         created() {
