@@ -1,0 +1,21 @@
+[debug] [2020-05-26T16:09:14.224Z] ----------------------------------------------------------------------
+[debug] [2020-05-26T16:09:14.226Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ins09\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-05-26T16:09:14.227Z] CLI Version:   8.4.0
+[debug] [2020-05-26T16:09:14.227Z] Platform:      win32
+[debug] [2020-05-26T16:09:14.227Z] Node Version:  v12.16.2
+[debug] [2020-05-26T16:09:14.228Z] Time:          Tue May 26 2020 19:09:14 GMT+0300 (GMT+03:00)
+[debug] [2020-05-26T16:09:14.228Z] ----------------------------------------------------------------------
+[debug] [2020-05-26T16:09:14.228Z] 
+[debug] [2020-05-26T16:09:14.239Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-26T16:09:14.240Z] > authorizing via FIREBASE_TOKEN environment variable
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  I:\__PROJECTS\Vue\sender
+
