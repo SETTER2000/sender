@@ -11,7 +11,10 @@
                                 :src="item.src"
                                 reverse-transition="fade-transition"
                                 transition="fade-transition"
-                        ></v-carousel-item>
+                        >
+                            <div class="car-link"><v-btn class="error" :to="'/add/'+item.id">{{item.title}}</v-btn></div>
+
+                        </v-carousel-item>
                     </v-carousel>
                 </v-flex>
             </v-layout>
@@ -20,9 +23,9 @@
             <v-layout row wrap>
                 <v-flex xs12
                         sm6
-                        lg4
-                v-for="itm of items"
-                :key="itm.id">
+                        md4
+                        v-for="itm of items"
+                        :key="itm.id">
                     <v-card
                             class="mx-auto"
 
@@ -47,6 +50,7 @@
                             <v-btn
                                     color="orange"
                                     text
+                                    :to="'/add/'+itm.id"
                             >
                                 Open
                             </v-btn>
@@ -64,16 +68,51 @@
         </v-container>
     </div>
 </template>
-
+<style scoped>
+    .car-link {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        background: rgba(0, 0, 0, .3);
+        transform: translate(-50%, 0);
+        padding: 10px 15px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+</style>
 <script>
     export default {
         name: 'Home',
         data: () => ({
-            items:[
-                {id:'120',title:'First item',description:'Hello world item 1',promo:false,src:'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiJkYWVmMzBlNS1jYWNlLTRmOTAtODEzMy1hOTk4OGZhODE1NTQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='},
-                {id:'121',title:'Second item',description:'Hello world item 2',promo:true,src:'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiIxMWQ5MWU3Ni00NGJlLTQ4NjAtOTNlMS1kMzljOGMzYjUxMTAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='},
-                {id:'122',title:'Third item',description:'Hello world item 3',promo:false,src:'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiI3YWNkOWNjMy0xMThlLTQ0NjQtYWU5MS1kYzlhNDViMjJmZmEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='},
-                {id:'123',title:'Fore item',description:'Hello world item 4',promo:true,src:'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiI4NzE1YWM0MS1mODgyLTQ4MzQtYWI2ZC1mYzE5YjhjYzg2YmMuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='},
+            items: [
+                {
+                    id: '120',
+                    title: 'First item',
+                    description: 'Hello world item 1',
+                    promo: false,
+                    src: 'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiJkYWVmMzBlNS1jYWNlLTRmOTAtODEzMy1hOTk4OGZhODE1NTQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='
+                },
+                {
+                    id: '121',
+                    title: 'Second item',
+                    description: 'Hello world item 2',
+                    promo: true,
+                    src: 'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiIxMWQ5MWU3Ni00NGJlLTQ4NjAtOTNlMS1kMzljOGMzYjUxMTAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='
+                },
+                {
+                    id: '122',
+                    title: 'Third item',
+                    description: 'Hello world item 3',
+                    promo: false,
+                    src: 'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiI3YWNkOWNjMy0xMThlLTQ0NjQtYWU5MS1kYzlhNDViMjJmZmEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='
+                },
+                {
+                    id: '123',
+                    title: 'Fore item',
+                    description: 'Hello world item 4',
+                    promo: true,
+                    src: 'https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiI4NzE1YWM0MS1mODgyLTQ4MzQtYWI2ZC1mYzE5YjhjYzg2YmMuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=='
+                },
             ]
         })
     }

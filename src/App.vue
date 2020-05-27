@@ -80,7 +80,7 @@
         </v-content>
 
         <v-footer app>
-            <span>sender &copy; 2020</span>
+            <span >2020 - Sender</span>
         </v-footer>
     </v-app>
 </template>
