@@ -51,7 +51,7 @@
                     <v-divider></v-divider>
                     <v-card-actions>
                         <v-btn
-                                color="warning"
+                                color="light-blue lighten-1"
                                 class="mr-4"
                                 @click="reset"
                         >
