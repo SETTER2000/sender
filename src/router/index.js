@@ -12,12 +12,12 @@ Vue.use(VueRouter)
     component:() => import(/* webpackChunkName: "about" */ '@/components/Home.vue')
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/help',
+    name: 'help',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/components/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/components/Help.vue')
   },
   {
     path: '/add',
@@ -50,6 +50,14 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '@/components/Auth/Reg.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '@/components/Auth/Login.vue')
   }
 ]
 

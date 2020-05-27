@@ -122,7 +122,7 @@
                 {title: 'Add', url: '/add', icon: 'mdi-playlist-plus', color: 'grey darken-2'},
                 {title: 'Edit', url: '/edit', icon: 'mdi-playlist-edit', color: 'grey darken-2'},
                 {title: 'List', url: '/list', icon: 'mdi-playlist-play', color: 'grey darken-2'},
-                {title: 'About', url: '/about', icon: 'mdi-playlist', color: 'grey darken-2'},
+                {title: 'Help', url: '/help', icon: 'mdi-help-circle', color: 'grey darken-2'},
 
                 {title: 'Exit', url: '/exit', icon: 'mdi-export', color: 'grey darken-2'},
 

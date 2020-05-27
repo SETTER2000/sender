@@ -6,12 +6,12 @@
 </template>
 <script>
   // @ is an alias to /src
-  import Reg from '@/components/Auth/Reg.vue'
+//  import Reg from '@/components/Auth/Reg.vue'
 
   export default {
     name: 'Reg',
     components: {
-      Reg
+  //    Reg
     }
   }
 </script>
