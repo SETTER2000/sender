@@ -53,25 +53,25 @@
                                     label="Do you agree?"
                                     required
                             ></v-checkbox>
-                            <v-divider></v-divider>
-                            <v-card-actions>
-                                <v-btn
-                                        color="warning"
-                                        class="mr-4"
-                                        @click="reset"
-                                >
-                                    Clear
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-btn color="success"
-                                       @click="validate"
-                                       :disabled="!valid">
-                                    Create Account
-                                </v-btn>
-                            </v-card-actions>
+
                         </v-form>
                     </v-card-text>
-
+                    <v-divider></v-divider>
+                    <v-card-actions>
+                        <v-btn
+                                color="warning"
+                                class="mr-4"
+                                @click="reset"
+                        >
+                            Clear
+                        </v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn color="success"
+                               @click="validate"
+                               :disabled="!valid">
+                            Create Account
+                        </v-btn>
+                    </v-card-actions>
                 </v-card>
                 <p class="subheading font-weight-regular">
                     For help and collaboration with other Sender developers,
@@ -104,10 +104,6 @@
             //     v => (v && v.length >= 6) || 'Password must be equal or more than 6 characters'
             // ],
             confirmPass: '',
-            // confirmPassRules: [
-            //     v => !!v || 'Password is required',
-            //     v => v === this.password || 'Password should match'
-            // ],
             checkbox: false,
             rules: {
                 required: value => !!value || 'Required.',
@@ -129,22 +125,9 @@
                 console.log(user);
                 return f ? user : f;
             },
-            // validate() {
-            //     this.$refs.form.validate();
-            //      if (this.$ref.form.validate()) {
-            //          const user = {
-            //              email: this.email,
-            //              password: this.password
-            //          }
-            //          console.log(user);
-            //      }
-            // },
             reset() {
                 this.$refs.form.reset()
-            },
-            // validate() {
-            //     this.$refs.form.validate()
-            // },
+            }
         }
     }
 </script>
