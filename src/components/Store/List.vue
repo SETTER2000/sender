@@ -6,7 +6,7 @@
                 <v-card
                         max-width="475"
                         class="mx-auto"
-                        v-for="tmp of templates"
+                        v-for="tmp of myItems"
                         :key="tmp.id"
                 >
                     <v-toolbar
@@ -24,7 +24,7 @@
                         <v-list-item>
                             <v-list-item-content>
                                 <v-list-item-title>{{tmp.title}}</v-list-item-title>
-                                <v-list-item-subtitle>{{tmp.date}}</v-list-item-subtitle>
+                                <v-list-item-subtitle>{{tmp.description}}</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>
@@ -34,22 +34,19 @@
                             two-line
                             flat
                     >
-                        <v-subheader>Hangout notifications</v-subheader>
+                        <v-subheader>{{tmp.title}}</v-subheader>
 
-                        <v-list-item-group
-                                v-model="templates"
-                                multiple
-                        >
+                        <v-list-item-group  >
                             <v-list-item>
                                 <template>
 <!--                                <template v-slot:default="{ active, toggle }">-->
-                                    <v-list-item-action>
+                                  <!--  <v-list-item-action>
                                         <v-checkbox
                                                 :input-value="tmp.done"
                                                 @change="templateDone"
                                         ></v-checkbox>
 
-                                    </v-list-item-action>
+                                    </v-list-item-action>-->
 
                                     <v-list-item-content>
                                         <v-list-item-title>Notifications</v-list-item-title>
@@ -71,7 +68,12 @@
 
 <script>
     export default {
-        name: 'List',
+        computed: {
+            myItems() {
+                return this.$store.getters.myItems
+            }
+        }
+     /*   name: 'List',
         data: () => ({
             active: {},
             templates: [
@@ -82,6 +84,6 @@
             templateDone(template) {
                 template.done = true
             }
-        }
+        }*/
     }
 </script>

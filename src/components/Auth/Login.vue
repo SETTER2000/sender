@@ -39,12 +39,12 @@
                                     @click:append="show1  = !show1 "
                             />
 
-                   <!--         <v-checkbox
-                                    v-model="checkbox"
-                                    :rules="[v => !!v || 'You must agree to continue!']"
-                                    label="Do you agree?"
-                                    required
-                            ></v-checkbox>-->
+                            <!--         <v-checkbox
+                                             v-model="checkbox"
+                                             :rules="[v => !!v || 'You must agree to continue!']"
+                                             label="Do you agree?"
+                                             required
+                                     ></v-checkbox>-->
 
                         </v-form>
                     </v-card-text>
@@ -60,7 +60,8 @@
                         <v-spacer></v-spacer>
                         <v-btn color="success"
                                @click="validate"
-                               :disabled="!valid">
+                               :loading = "loading"
+                               :disabled="!valid || loading">
                             Create Account
                         </v-btn>
                     </v-card-actions>
@@ -106,6 +107,11 @@
             },
             lazy: false,
         }),
+        computed:{
+          loading(){
+              return this.$store.getters.loading
+          }
+        },
         methods: {
             validate() {
                 let f = this.$refs.form.validate();
@@ -113,7 +119,11 @@
                     email: this.email,
                     password: this.password
                 }
-                console.log(user);
+                this.$store.dispatch('loginUser', user)
+                    .then(() => {
+                        this.$router.push('/')
+                    }).catch(err => console.log(err))
+
                 return f ? user : f;
             },
             reset() {

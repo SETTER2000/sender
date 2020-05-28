@@ -1,6 +1,6 @@
 export default {
-    state:{
-        items:[
+    state: {
+        items: [
             {
                 id: '120',
                 title: 'First item',
@@ -31,17 +31,31 @@ export default {
             },
         ]
     },
-    mutation:{},
-    actions:{},
-    getters:{
-        items(state){
+    mutation: {
+        createAd(state, payload) {
+            state.items.push(payload)
+        }
+    },
+    actions: {
+        createAd({commit},payload) {
+        payload.id=Math.random()
+            commit('createAd', payload)
+        }
+    },
+    getters: {
+        items(state) {
             return state.items
         },
-        promoItems(state){
-            return state.items.filter(ad=>ad.promo)
+        promoItems(state) {
+            return state.items.filter(ad => ad.promo)
         },
-        myItems(state){
-            return state
+        myItems(state) {
+            return state.items
+        },
+        itemById(state) {
+            return itemId => {
+                return state.items.find(item => item.id === itemId)
+            }
         }
     }
 }

@@ -1,9 +1,60 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-                <p class="display-0 font-weight-bold text-right">
+            <v-flex xs12>
 
+                    <v-card
+                            class="mx-auto"
+                            max-width="400"
+                    >
+                        <v-img
+                                class="white--text align-end"
+                                height="200px"
+                                :src="item.src"
+                        >
+                            <v-card-title>{{item.title}}</v-card-title>
+                        </v-img>
+
+                        <v-card-subtitle class="pb-0">{{item.id}}</v-card-subtitle>
+
+                        <v-card-text class="text--primary">
+
+                            <div>{{item.description}}</div>
+                        </v-card-text>
+
+                        <v-card-actions>
+                            <v-btn
+                                    color="orange"
+                                    text
+                            >
+                                Share
+                            </v-btn>
+
+                            <v-btn
+                                    color="orange"
+                                    text
+                            >
+                                Explore
+                            </v-btn>
+                        </v-card-actions>
+                    </v-card>
+
+
+                <!--<v-card>
+                    <v-card-media :src="item.src"
+                    height="300px"
+                    ></v-card-media>
+                        <v-card-text>
+                            <h1 class="text&#45;&#45;primary">{{item.title}}</h1>
+                            <p>{{item.description}}</p>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn class="warning" flat>Edit</v-btn>
+                            <v-btn class="warning" flat>Buy</v-btn>
+                        </v-card-actions>
+                </v-card>-->
+               <!-- <p class="display-0 font-weight-bold text-right">
                     <template>
                         <div class="text-right">
                             <v-dialog
@@ -11,24 +62,18 @@
                                     width="500"
                             >
                                 <template v-slot:activator="{ on }">
-
                                     <v-icon v-on="on">mdi-help-circle-outline</v-icon>
-
                                 </template>
-
                                 <v-card>
                                     <v-card-title
                                             class="headline grey darken-4"
                                     >
                                         К сведению
                                     </v-card-title>
-
                                     <v-card-text class=" my-6">
                                         {{help}}
                                     </v-card-text>
-
                                     <v-divider></v-divider>
-
                                     <v-card-actions>
                                         <v-spacer></v-spacer>
                                         <v-btn
@@ -43,7 +88,6 @@
                             </v-dialog>
                         </div>
                     </template>
-
                 </p>
                 <v-form ref="form" v-model="valid" :lazy-validation="lazy">
                     <template>
@@ -55,8 +99,7 @@
                                         :return-value.sync="date"
                                         clearable
                                         persistent
-                                        width="290px"
-                                >
+                                        width="290px" >
                                     <template v-slot:activator="{ on }">
                                         <v-text-field
                                                 v-model="date"
@@ -85,7 +128,6 @@
                             </v-col>
                         </v-row>
                     </template>
-
                     <v-container>
                         <v-layout row class="text-center">
                             <v-flex>
@@ -119,29 +161,25 @@
                                                         v-for="lg of logos"
                                                         :key="lg.id">
                                                     <v-card class="mx-auto">
-                                                        <v-img class="white--text align-end"
+                                                        <v-img class="white&#45;&#45;text align-end"
                                                                height="180px"
                                                                :src="lg.src">
                                                             <v-card-title></v-card-title>
                                                         </v-img>
-
                                                         <v-card-subtitle class="pb-0"></v-card-subtitle>
-
-                                                        <v-card-text class="text--primary d-flex justify-md-space-between">
+                                                        <v-card-text class="text&#45;&#45;primary d-flex justify-md-space-between">
                                                             <div>{{lg.title}}</div>
-
                                                             <div>{{lg.description}}</div>
                                                             <div>{{lg.id}}</div>
                                                         </v-card-text>
-
                                                         <v-card-actions>
-                                                            <!--  <v-btn
+                                                            &lt;!&ndash;  <v-btn
                                                                       color="orange"
                                                                       text
                                                                       :to="'/add/'+logo.id"
                                                               >
                                                                   Open
-                                                              </v-btn>-->
+                                                              </v-btn>&ndash;&gt;
                                                             <v-btn icon color="orange" fab x-small
                                                                    @click="goIm(lg)">
                                                                 <v-icon>mdi-upload</v-icon>
@@ -157,7 +195,6 @@
                                             </v-layout>
                                         </v-container>
                                         <v-divider></v-divider>
-
                                     </v-card>
                                 </v-dialog>
                             </v-flex>
@@ -166,38 +203,30 @@
                             <v-flex xs12>
                                 <v-card
                                         class="mx-auto"
-                                        max-width="280"
-                                >
-                                    <v-img
-                                            class="white--text align-end"
+                                        max-width="280" >
+                                    <v-img class="white&#45;&#45;text align-end"
                                             height="180px"
-                                            :src="logo.src"
-                                    >
-<!--                                        <v-card-title>Top 10 Australian beaches</v-card-title>-->
+                                            :src="logo.src" >
+&lt;!&ndash;                                        <v-card-title>Top 10 Australian beaches</v-card-title>&ndash;&gt;
                                     </v-img>
-
                                     <v-card-subtitle class="pb-0">{{logo.id}}</v-card-subtitle>
-
-                                    <v-card-text class="text--primary">
+                                    <v-card-text class="text&#45;&#45;primary">
                                         <div>{{logo.description}}</div>
-
                                         <div>{{logo.title}}</div>
                                     </v-card-text>
-
                                     <v-card-actions>
-                                       <!-- <v-btn
+                                       &lt;!&ndash; <v-btn
                                                 color="orange"
                                                 text
                                         >
                                             Share
                                         </v-btn>
-
                                         <v-btn
                                                 color="orange"
                                                 text
                                         >
                                             Explore
-                                        </v-btn>-->
+                                        </v-btn>&ndash;&gt;
                                     </v-card-actions>
                                 </v-card>
                             </v-flex>
@@ -213,14 +242,11 @@
                                           required
                                           :rules="[rules.required, rules.min]"/>
                         </v-col>
-
                     </v-row>
-
                     <v-container fluid>
                         <v-sheet
                                 elevation="12"
-                                class="pa-12"
-                        >
+                                class="pa-12">
                             <v-textarea
                                     label="Description"
                                     :rules="[rules.required, rules.min]"
@@ -231,24 +257,22 @@
                                     prepend-icon="mdi-semantic-web"
                                     hint="At least 10 characters"
                             ></v-textarea>
-
-                            <!--                                <v-textarea-->
-                            <!--                                        class="mx-2"-->
-                            <!--                                        label="prepend-icon"-->
-                            <!--                                        rows="1"-->
-                            <!--                                        prepend-icon="comment"-->
-                            <!--                                ></v-textarea>-->
-
+                            &lt;!&ndash;                                <v-textarea&ndash;&gt;
+                            &lt;!&ndash;                                        class="mx-2"&ndash;&gt;
+                            &lt;!&ndash;                                        label="prepend-icon"&ndash;&gt;
+                            &lt;!&ndash;                                        rows="1"&ndash;&gt;
+                            &lt;!&ndash;                                        prepend-icon="comment"&ndash;&gt;
+                            &lt;!&ndash;                                ></v-textarea>&ndash;&gt;
                             <div v-if="title" class="mt-12">
                                 <h5 class="display-0 font-weight-light mb-2 text-right">Report</h5>
                                 <v-divider></v-divider>
                                 <div class="my-8">
-                                    <p>Title: <span class="display-0 font-weight-light text--secondary pl-5">{{quotes(title)  }}</span>
+                                    <p>Title: <span class="display-0 font-weight-light text&#45;&#45;secondary pl-5">{{quotes(title)  }}</span>
                                     </p>
-                                    <p>Description: <span class="display-0 font-weight-light text--secondary pl-5">{{quotes(description)  }}</span>
+                                    <p>Description: <span class="display-0 font-weight-light text&#45;&#45;secondary pl-5">{{quotes(description)  }}</span>
                                     </p>
                                     <p>Link: <span
-                                            class="display-0 font-weight-light text--secondary pl-5">{{link}}</span></p>
+                                            class="display-0 font-weight-light text&#45;&#45;secondary pl-5">{{link}}</span></p>
                                 </div>
                             </div>
                         </v-sheet>
@@ -267,23 +291,9 @@
                 </v-form>
                 <v-container fluid>
                     <v-row>
-                        <v-col
-                                cols="12"
-                                class="py-2"
-                        >
+                        <v-col cols="12"
+                                class="py-2" >
                             <v-btn-toggle v-model="toggle_exclusive" class="d-flex flex-row-reverse">
-                                <!-- <v-btn>
-                                     <v-icon>mdi-format-align-left</v-icon>
-                                 </v-btn>
-
-                                 <v-btn>
-                                     <v-icon>mdi-format-align-center</v-icon>
-                                 </v-btn>
-
-                                 <v-btn>
-                                     <v-icon>mdi-format-align-right</v-icon>
-                                 </v-btn>
- -->
                                 <v-btn v-for="btn of buttonsMenu"
                                        :key="btn.id"
                                        :to="'/add/'+btn.id">
@@ -308,18 +318,26 @@
                     >
                         Create Template
                     </v-btn>
-                </v-card-actions>
+                </v-card-actions>-->
             </v-flex>
         </v-layout>
-
     </v-container>
 </template>
 
 <script>
     // const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
-    const linkRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/
+    // const linkRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/
     export default {
-        data: () => ({
+        props:['id'],
+        computed:{
+            item(){
+                const id=this.id;
+                return this.$store.getters.itemById(id)
+            }
+        }
+
+       /* data: () => ({
+            props:['id'],
             valid: true,
             promo: false,
             templates: [],
@@ -423,10 +441,10 @@
                     src: "https://d17pkle29f0gkk.cloudfront.net/eyJidWNrZXQiOiJwYWx0b3MiLCJrZXkiOiJkYWVmMzBlNS1jYWNlLTRmOTAtODEzMy1hOTk4OGZhODE1NTQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxNDI0LCJoZWlnaHQiOjgwMH19fQ=="
                 },
             ],
-            /*   emailRules: [
+            /!*   emailRules: [
                    v => !!v || 'E-mail is required',
                    v => emailRegex.test(v) || 'E-mail must be valid'
-               ],*/
+               ],*!/
 
             // passwordRules: [
             //     v => !!v || 'Password is required',
@@ -468,6 +486,6 @@
             quotes: v => (v && v.replace(/[«»]/g, "'")),
 
 
-        }
+        }*/
     }
 </script>

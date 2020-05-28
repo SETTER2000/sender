@@ -68,7 +68,8 @@
                         <v-spacer></v-spacer>
                         <v-btn color="success"
                                @click="validate"
-                               :disabled="!valid">
+                               :loading="loading"
+                               :disabled="!valid || loading">
                             Create Account
                         </v-btn>
                     </v-card-actions>
@@ -114,7 +115,11 @@
             },
             lazy: false,
         }),
-
+        computed: {
+            loading() {
+                return this.$store.getters.loading
+            }
+        },
         methods: {
             validate() {
                 let f = this.$refs.form.validate();
@@ -122,7 +127,12 @@
                     email: this.email,
                     password: this.password
                 }
-                console.log(user);
+                this.$store.dispatch('registerUser', user)
+                .then(()=>{
+                    this.$router.push('/')
+                })
+                .catch(err=>console.log(err))
+                // console.log(user);
                 return f ? user : f;
             },
             reset() {

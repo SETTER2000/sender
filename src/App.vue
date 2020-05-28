@@ -103,6 +103,7 @@
                 {title: 'Edit', url: '/edit', icon: 'mdi-playlist-edit', color: 'grey darken-2'},
                 {title: 'List', url: '/list', icon: 'mdi-playlist-play', color: 'grey darken-2'},
                 {title: 'Help', url: '/help', icon: 'mdi-help-circle', color: 'grey darken-2'},
+                {title: 'New Ad', url: '/new', icon: 'mdi-note-plus', color: 'grey darken-2'},
 
                 {title: 'Exit', url: '/exit', icon: 'mdi-export', color: 'grey darken-2'},
 

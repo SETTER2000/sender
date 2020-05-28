@@ -6,7 +6,7 @@
                 <v-flex xs12>
                     <v-carousel>
                         <v-carousel-item
-                                v-for="(item) in items"
+                                v-for="(item) in promoItems"
                                 :key="item.id"
                                 :src="item.src"
                                 reverse-transition="fade-transition"
@@ -24,7 +24,7 @@
                 <v-flex xs12
                         sm6
                         md4
-                        v-for="itm of promoItems"
+                        v-for="itm of items"
                         :key="itm.id">
                     <v-card
                             class="mx-auto"
